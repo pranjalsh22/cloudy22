@@ -1,0 +1,9 @@
+streamlit
+pandas
+matplotlib
+numpy
+plotly
+pydrive
+scipy
+openai
+holidays
