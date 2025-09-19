@@ -28,7 +28,7 @@ if st.session_state.page == "Home":
     st.header("The .out file")
     st.write("The lines that for the .out file and display visual.")
     st.header("The continuum file")
-    st.write("The continuum file generated using the save continuum command can be using to analyse the bolometric luminosity of the cloud or the source."
+    st.write("The continuum file generated using the save continuum command can be using to analyse the bolometric luminosity of the cloud or the source.")
     st.header(" My work")
 else:
     page_path = PAGES[st.session_state.page]["path"]
