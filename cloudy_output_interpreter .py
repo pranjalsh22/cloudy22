@@ -18,12 +18,12 @@ def display_poster_html(image_file, preview_width=400):
         f"""
         <div style="text-align:center;">
             <img src="data:image/jpg;base64,{encoded}" 
-                 style="max-width:90%; width:{preview_width}px; border:2px solid #ccc; box-shadow:5px 5px 15px rgba(0,0,0,0.3); border-radius:8px;">
+                 style="max-width:90%; width:{preview_width}px; border:4px solid #ccc; box-shadow:5px 5px 15px rgba(0,0,0,0.3); border-radius:8px;">
         </div>
         """,
         unsafe_allow_html=True
     )
-display_poster_html('poster.jpg',600)
+
 #-----------
 st.set_page_config(page_title="My Streamlit App", layout="wide")
 
@@ -53,6 +53,7 @@ if st.session_state.page == "Home":
     st.header("The continuum file")
     st.write("The continuum file generated using the save continuum command can be using to analyse the bolometric luminosity of the cloud or the source.")
     st.header(" My work")
+    display_poster_html('poster.jpg',600)
 else:
     page_path = PAGES[st.session_state.page]["path"]
     if page_path and os.path.exists(page_path):
