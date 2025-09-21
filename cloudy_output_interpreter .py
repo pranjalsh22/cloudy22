@@ -8,27 +8,25 @@ import os
 #------------
 import base64
 
-def add_local_background(image_file):
+import streamlit as st
+import base64
+
+def image_with_zoom(image_file, width=300):
     with open(image_file, "rb") as f:
         data = f.read()
     encoded = base64.b64encode(data).decode()
 
     st.markdown(
         f"""
-        <style>
-        .stApp {{
-            background-image: url("data:image/jpg;base64,{encoded}");
-            background-size: auto;
-            background-position: center;
-            background-attachment: scroll;
-        }}
-        </style>
+        <img src="data:image/jpg;base64,{encoded}" 
+             style="width:{width}px; cursor: zoom-in;" 
+             onclick="this.style.width='100%';">
         """,
         unsafe_allow_html=True
     )
 
 # Use this with your own image file path
-add_local_background("poster.jpg")  # Make sure background.jpg is in the same folder
+image_with_zoom("poster.jpg")  # Make sure background.jpg is in the same folder
 #-----------
 st.set_page_config(page_title="My Streamlit App", layout="wide")
 
