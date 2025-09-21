@@ -6,21 +6,29 @@ import os
 # https://github.com/pranjalsh22/cloudy22/blob/main/Poster_2024-11_ISSAC2024_Pranjal_v10-final.pdf
 
 #------------
-def add_background():
+import base64
+
+def add_local_background(image_file):
+    with open(image_file, "rb") as f:
+        data = f.read()
+    encoded = base64.b64encode(data).decode()
+
     st.markdown(
-        """
+        f"""
         <style>
-        .stApp {
-            background-image: url('https://github.com/pranjalsh22/cloudy22/blob/main/Poster_2024-11_ISSAC2024_Pranjal_v10-final.pdf');
-            background-attachment: fixed;
+        .stApp {{
+            background-image: url("data:image/jpg;base64,{encoded}");
             background-size: cover;
-        }
+            background-position: center;
+            background-attachment: fixed;
+        }}
         </style>
         """,
         unsafe_allow_html=True
     )
 
-add_background()
+# Use this with your own image file path
+add_local_background("Poster_2024-11_ISSAC2024_Pranjal_v10-final.pdf")  # Make sure background.jpg is in the same folder
 #-----------
 st.set_page_config(page_title="My Streamlit App", layout="wide")
 
