@@ -6,34 +6,52 @@ import os
 # https://github.com/pranjalsh22/cloudy22/blob/main/Poster_2024-11_ISSAC2024_Pranjal_v10-final.pdf
 
 #------------
+import streamlit as st
 import base64
 
-def display_clickable_image(image_file, small_width=300):
+def display_poster(image_file, preview_width=400):
+    """
+    Displays a research poster with a small preview that can be clicked to enlarge.
+    
+    Args:
+        image_file (str): Path to the poster image.
+        preview_width (int): Width of the small preview in pixels.
+    """
     # Read and encode image
     with open(image_file, "rb") as f:
         data = f.read()
     encoded = base64.b64encode(data).decode()
-
-    # HTML + CSS + JS for click-to-zoom
+    
+    # HTML + CSS + JS
     st.markdown(
         f"""
         <style>
-        .zoom-img {{
-            width: {small_width}px;
+        .poster-box {{
+            text-align: center;
+            margin: 20px 0;
+        }}
+        .poster-img {{
+            width: {preview_width}px;
+            max-width: 90%;
             transition: width 0.3s ease;
             cursor: zoom-in;
+            border: 2px solid #ccc;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+            border-radius: 8px;
         }}
         </style>
-
-        <img src="data:image/jpg;base64,{encoded}" 
-             class="zoom-img" 
-             onclick="this.style.width = this.style.width === '{small_width}px' ? '100%' : '{small_width}px';">
+        
+        <div class="poster-box">
+            <img src="data:image/jpg;base64,{encoded}" 
+                 class="poster-img"
+                 onclick="this.style.width = this.style.width === '{preview_width}px' ? '90%' : '{preview_width}px';">
+        </div>
         """,
         unsafe_allow_html=True
     )
 
 # Usage
-display_clickable_image("poster.jpg", small_width=300)
+display_poster("poster.jpg", preview_width=400)
 
 #-----------
 st.set_page_config(page_title="My Streamlit App", layout="wide")
