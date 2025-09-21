@@ -6,21 +6,24 @@ import os
 # https://github.com/pranjalsh22/cloudy22/blob/main/Poster_2024-11_ISSAC2024_Pranjal_v10-final.pdf
 
 #------------
-from PIL import Image
 
-def display_poster(image_file, preview_width=400):
-    img = Image.open(image_file)
+import base64
+
+def display_poster_html(image_file, preview_width=400):
+    with open(image_file, "rb") as f:
+        data = f.read()
+    encoded = base64.b64encode(data).decode()
     
-    # Small preview
-    st.image(img, width=preview_width, caption="Poster Preview")
-    
-    # Expander shows full resolution
-    with st.expander("Click to enlarge poster"):
-        st.image(img)  # No width specified → full resolution
-
-# Usage
-display_poster("poster.jpg", preview_width=400)
-
+    st.markdown(
+        f"""
+        <div style="text-align:center;">
+            <img src="data:image/jpg;base64,{encoded}" 
+                 style="max-width:90%; width:{preview_width}px; border:2px solid #ccc; box-shadow:5px 5px 15px rgba(0,0,0,0.3); border-radius:8px;">
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+display_poster_html(poster.jpg, preview_width=400)
 #-----------
 st.set_page_config(page_title="My Streamlit App", layout="wide")
 
