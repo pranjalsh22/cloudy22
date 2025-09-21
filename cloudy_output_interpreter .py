@@ -6,25 +6,20 @@ import os
 # https://github.com/pranjalsh22/cloudy22/blob/main/Poster_2024-11_ISSAC2024_Pranjal_v10-final.pdf
 
 #------------
-import streamlit as st
 from PIL import Image
 
 def display_poster(image_file, preview_width=400):
-    """
-    Display a research poster with a small preview and option to enlarge using expander.
-    """
     img = Image.open(image_file)
     
     # Small preview
     st.image(img, width=preview_width, caption="Poster Preview")
     
-    # Expander to see full-size poster
+    # Expander shows full resolution
     with st.expander("Click to enlarge poster"):
-        st.image(img, caption="Full-size Poster")
+        st.image(img)  # No width specified → full resolution
 
 # Usage
 display_poster("poster.jpg", preview_width=400)
-
 
 #-----------
 st.set_page_config(page_title="My Streamlit App", layout="wide")
