@@ -8,25 +8,33 @@ import os
 #------------
 import base64
 
-import streamlit as st
-import base64
-
-def image_with_zoom(image_file, width=300):
+def display_clickable_image(image_file, small_width=300):
+    # Read and encode image
     with open(image_file, "rb") as f:
         data = f.read()
     encoded = base64.b64encode(data).decode()
 
+    # HTML + CSS + JS for click-to-zoom
     st.markdown(
         f"""
+        <style>
+        .zoom-img {{
+            width: {small_width}px;
+            transition: width 0.3s ease;
+            cursor: zoom-in;
+        }}
+        </style>
+
         <img src="data:image/jpg;base64,{encoded}" 
-             style="width:{width}px; cursor: zoom-in;" 
-             onclick="this.style.width='100%';">
+             class="zoom-img" 
+             onclick="this.style.width = this.style.width === '{small_width}px' ? '100%' : '{small_width}px';">
         """,
         unsafe_allow_html=True
     )
 
-# Use this with your own image file path
-image_with_zoom("poster.jpg")  # Make sure background.jpg is in the same folder
+# Usage
+display_clickable_image("poster.jpg", small_width=300)
+
 #-----------
 st.set_page_config(page_title="My Streamlit App", layout="wide")
 
