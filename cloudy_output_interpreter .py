@@ -28,7 +28,7 @@ def add_local_background(image_file):
     )
 
 # Use this with your own image file path
-add_local_background("Poster_2024-11_ISSAC2024_Pranjal_v10-final.pdf")  # Make sure background.jpg is in the same folder
+add_local_background("poster.jpg")  # Make sure background.jpg is in the same folder
 #-----------
 st.set_page_config(page_title="My Streamlit App", layout="wide")
 
