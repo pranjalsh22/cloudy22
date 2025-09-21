@@ -18,9 +18,9 @@ def add_local_background(image_file):
         <style>
         .stApp {{
             background-image: url("data:image/jpg;base64,{encoded}");
-            background-size: cover;
+            background-size: contain;
             background-position: center;
-            background-attachment: fixed;
+            background-attachment: scroll;
         }}
         </style>
         """,
