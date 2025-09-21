@@ -23,7 +23,7 @@ def display_poster_html(image_file, preview_width=400):
         """,
         unsafe_allow_html=True
     )
-display_poster_html(poster.jpg, preview_width=400)
+display_poster_html('poster.jpg', preview_width=400)
 #-----------
 st.set_page_config(page_title="My Streamlit App", layout="wide")
 
