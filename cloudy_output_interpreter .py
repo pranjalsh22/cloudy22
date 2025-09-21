@@ -2,6 +2,26 @@ import streamlit as st
 import runpy
 import os
 
+#link:
+# https://github.com/pranjalsh22/cloudy22/blob/main/Poster_2024-11_ISSAC2024_Pranjal_v10-final.pdf
+
+#------------
+def add_background():
+    st.markdown(
+        """
+        <style>
+        .stApp {
+            background-image: url('https://github.com/pranjalsh22/cloudy22/blob/main/Poster_2024-11_ISSAC2024_Pranjal_v10-final.pdf');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+add_background()
+#-----------
 st.set_page_config(page_title="My Streamlit App", layout="wide")
 
 # Paths to your scripts
