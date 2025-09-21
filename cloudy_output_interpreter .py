@@ -7,51 +7,24 @@ import os
 
 #------------
 import streamlit as st
-import base64
+from PIL import Image
 
 def display_poster(image_file, preview_width=400):
     """
-    Displays a research poster with a small preview that can be clicked to enlarge.
-    
-    Args:
-        image_file (str): Path to the poster image.
-        preview_width (int): Width of the small preview in pixels.
+    Display a research poster with a small preview and option to enlarge using expander.
     """
-    # Read and encode image
-    with open(image_file, "rb") as f:
-        data = f.read()
-    encoded = base64.b64encode(data).decode()
+    img = Image.open(image_file)
     
-    # HTML + CSS + JS
-    st.markdown(
-        f"""
-        <style>
-        .poster-box {{
-            text-align: center;
-            margin: 20px 0;
-        }}
-        .poster-img {{
-            width: {preview_width}px;
-            max-width: 90%;
-            transition: width 0.3s ease;
-            cursor: zoom-in;
-            border: 2px solid #ccc;
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
-            border-radius: 8px;
-        }}
-        </style>
-        
-        <div class="poster-box">
-            <img src="data:image/jpg;base64,{encoded}" 
-                 class="poster-img"
-                 onclick="this.style.width = this.style.width === '{preview_width}px' ? '90%' : '{preview_width}px';">
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    # Small preview
+    st.image(img, width=preview_width, caption="Poster Preview")
+    
+    # Expander to see full-size poster
+    with st.expander("Click to enlarge poster"):
+        st.image(img, caption="Full-size Poster")
 
 # Usage
 display_poster("poster.jpg", preview_width=400)
+
 
 #-----------
 st.set_page_config(page_title="My Streamlit App", layout="wide")
