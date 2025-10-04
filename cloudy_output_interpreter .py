@@ -62,10 +62,10 @@ if st.session_state.page == "Home":
         
         # Links to the codes
         st.subheader("Accretion disk spectrum")
-        col1, col2 = st.columns(2)
-        with col1:
+        column1, column2 = st.columns(2)
+        with column1:
             st.link_button("🔗 ACCLUM (v1)", "https://accretion-disk-spectrum.streamlit.app")
-        with col2:
+        with column2:
             st.link_button("🔗 ACCLUM 2 (in development)", "https://acclum2.streamlit.app")
         
     with col1:
