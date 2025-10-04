@@ -54,6 +54,54 @@ if st.session_state.page == "Home":
     st.write("The continuum file generated using the save continuum command can be using to analyse the bolometric luminosity of the cloud or the source.")
     st.header(" My work")
     display_poster_html('poster.jpg',600)
+    
+    st.title("An Insight into Spectral States in Radio-Loud AGNs")
+    
+    # Summary section
+    st.header("Summary")
+    st.write("""
+    In this study, we investigate whether **high-excitation radio galaxies (HERGs)** 
+    can be interpreted as analogues of the accretion states observed in 
+    **stellar-mass black hole X-ray binaries (BHXRBs)**. 
+    
+    Using a self-developed Python code (**ACCLUM**), we compute the spectrum of a 
+    standard accretion disk for a range of black hole masses and accretion parameters. 
+    Subsequently, the spectral synthesis code **CLOUDY** was employed to simulate the 
+    [O III] λ5007 Å emission from narrow-line region (NLR) clouds photoionized by the 
+    disk spectrum. 
+    
+    The accretion disk was modeled with an **inner truncation at 50 RS** to allow 
+    for the presence of an inner advective flow, potentially responsible for jet launching. 
+    Our computations demonstrate that such a truncated disk is still capable of 
+    producing sufficient ultraviolet luminosity to reproduce the observed [O III] 
+    line luminosities in HERGs. 
+    
+    **Conclusion:**  
+    This result supports the interpretation that HERGs may correspond to the 
+    **very high/intermediate accretion states (VHS/IS)** of BHXRBs, in which 
+    radiatively efficient disks and strong relativistic jets can coexist.
+    """)
+    
+    # Links to the codes
+    st.subheader("Related Tools")
+    col1, col2 = st.columns(2)
+    with col1:
+        st.link_button("🔗 ACCLUM (v1)", "https://accretion-disk-spectrum.streamlit.app")
+    with col2:
+        st.link_button("🔗 ACCLUM 2 (in development)", "https://acclum2.streamlit.app")
+    
+    # Publication info
+    st.subheader("Publication")
+    st.write("""
+    This work will appear in the forthcoming volume:  
+    **“Recent Advances in Astrophysics and Cosmology towards the Mega Telescope Era”**,  
+    to be published in the **Astrophysics and Space Science Proceedings** series 
+    (Springer Nature).  
+    
+    This book series is indexed in **Scopus**.  
+    """)
+    st.link_button("View Series on Springer", "https://link.springer.com/series/7395")
+
 else:
     page_path = PAGES[st.session_state.page]["path"]
     if page_path and os.path.exists(page_path):
