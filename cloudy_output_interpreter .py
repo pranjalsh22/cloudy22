@@ -59,6 +59,15 @@ if st.session_state.page == "Home":
         st.header("Poster")
         st.link_button("ISSAC-2024","https://www.astron-soc.in/node/594")
         display_poster_html('poster.jpg',600)
+        
+        # Links to the codes
+        st.subheader("Accretion disk spectrum")
+        col1, col2 = st.columns(2)
+        with col1:
+            st.link_button("🔗 ACCLUM (v1)", "https://accretion-disk-spectrum.streamlit.app")
+        with col2:
+            st.link_button("🔗 ACCLUM 2 (in development)", "https://acclum2.streamlit.app")
+        
     with col1:
         st.header("Book chapter")
         
@@ -96,14 +105,6 @@ if st.session_state.page == "Home":
         **very high/intermediate accretion states (VHS/IS)** of BHXRBs, in which 
         radiatively efficient disks and strong relativistic jets can coexist.
         """)
-        
-        # Links to the codes
-        st.subheader("Accretion disk spectrum")
-        col1, col2 = st.columns(2)
-        with col1:
-            st.link_button("🔗 ACCLUM (v1)", "https://accretion-disk-spectrum.streamlit.app")
-        with col2:
-            st.link_button("🔗 ACCLUM 2 (in development)", "https://acclum2.streamlit.app")
         
 
 else:
