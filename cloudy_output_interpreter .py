@@ -43,7 +43,7 @@ for i, (name, details) in enumerate(PAGES.items()):
         st.session_state.page = name
 
 st.markdown("---")
-
+#-----------------MAKING HOME PAGE---------------------------
 if st.session_state.page == "Home":
     st.title("CLOUDY output file interpretor")
     st.write("by Pranjal Sharma")
@@ -53,14 +53,14 @@ if st.session_state.page == "Home":
     st.header("The continuum file")
     st.write("The continuum file generated using the save continuum command can be using to analyse the bolometric luminosity of the cloud or the source.")
     st.header(" My work")
+    st.title("An Insight into Spectral States in Radio-Loud AGNs")
     col1,col2=st.columns(2)
     with col2:
+        st.header("Poster")
         display_poster_html('poster.jpg',600)
     with col1:
-        st.title("An Insight into Spectral States in Radio-Loud AGNs")
-        
-        # Summary section
-        st.header("Summary")
+        st.header("Book chapter")
+        st.header("Abstract")
         st.write("""
         In this study, we investigate whether **high-excitation radio galaxies (HERGs)** 
         can be interpreted as analogues of the accretion states observed in 
