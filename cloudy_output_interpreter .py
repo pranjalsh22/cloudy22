@@ -57,6 +57,7 @@ if st.session_state.page == "Home":
     col1,col2=st.columns(2)
     with col2:
         st.header("Poster")
+        st.link("ISSAC-2024","https://www.astron-soc.in/node/594")
         display_poster_html('poster.jpg',600)
     with col1:
         st.header("Book chapter")
