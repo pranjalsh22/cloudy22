@@ -100,8 +100,8 @@ if st.session_state.page == "Home":
         Our computations demonstrate that such a truncated disk is still capable of 
         producing sufficient ultraviolet luminosity to reproduce the observed [O III] 
         line luminosities in HERGs. """)
-        st.header("Conclusion:")  
-        st.write("""This result supports the interpretation that HERGs may correspond to the 
+    st.header("Conclusion:")  
+    st.write("""This result supports the interpretation that HERGs may correspond to the 
         **very high/intermediate accretion states (VHS/IS)** of BHXRBs, in which 
         radiatively efficient disks and strong relativistic jets can coexist.
         """)
