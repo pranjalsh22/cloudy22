@@ -14,6 +14,7 @@ st.sidebar.markdown("""
 Amity Institute of Applied Sciences,  
 Amity University Uttar Pradesh, Noida, India  
 [Email](mailto:pranjalsh22@gmail.com)
+
 ---
 
 **Dr. Chiranjib Konar**  
