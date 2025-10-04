@@ -5,8 +5,30 @@ import os
 #link:
 # https://github.com/pranjalsh22/cloudy22/blob/main/Poster_2024-11_ISSAC2024_Pranjal_v10-final.pdf
 
-#------------
+#------------SIDEBAR---------
 
+st.sidebar.title("Authors")
+
+st.sidebar.markdown("""
+**Pranjal Sharma**  
+Amity Institute of Applied Sciences,  
+Amity University Uttar Pradesh, Noida, India  
+[Email](mailto:pranjalsh22@gmail.com)
+---
+
+**Dr. Chiranjib Konar**  
+Amity Institute of Applied Sciences,  
+Amity University Uttar Pradesh, Noida, India  
+[Email](mailto:chiranjib.konar@gmail.com)  
+
+---
+
+**Dr. Shubhrangshu Ghosh**  
+Centre for Astrophysics, Gravitation and Cosmology,  
+Department of Physics, SRM University, Sikkim, India  
+""")
+
+#-----------
 import base64
 
 def display_poster_html(image_file, preview_width=400):
