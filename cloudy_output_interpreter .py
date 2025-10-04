@@ -57,10 +57,23 @@ if st.session_state.page == "Home":
     col1,col2=st.columns(2)
     with col2:
         st.header("Poster")
-        st.link("ISSAC-2024","https://www.astron-soc.in/node/594")
+        st.link_button("ISSAC-2024","https://www.astron-soc.in/node/594")
         display_poster_html('poster.jpg',600)
     with col1:
         st.header("Book chapter")
+        
+        # Publication info
+        st.subheader("Publication")
+        st.write("""
+        This work will appear in the forthcoming volume:  
+        **“Recent Advances in Astrophysics and Cosmology towards the Mega Telescope Era”**,  
+        to be published in the **Astrophysics and Space Science Proceedings** series 
+        (Springer Nature).  
+        
+        This book series is indexed in **Scopus**.  
+        """)
+        st.link_button("View Series on Springer", "https://link.springer.com/series/7395")
+        
         st.header("Abstract")
         st.write("""
         In this study, we investigate whether **high-excitation radio galaxies (HERGs)** 
@@ -77,33 +90,21 @@ if st.session_state.page == "Home":
         for the presence of an inner advective flow, potentially responsible for jet launching. 
         Our computations demonstrate that such a truncated disk is still capable of 
         producing sufficient ultraviolet luminosity to reproduce the observed [O III] 
-        line luminosities in HERGs. 
-        
-        **Conclusion:**  
-        This result supports the interpretation that HERGs may correspond to the 
+        line luminosities in HERGs. """)
+        st.header("Conclusion:")  
+        st.write("""This result supports the interpretation that HERGs may correspond to the 
         **very high/intermediate accretion states (VHS/IS)** of BHXRBs, in which 
         radiatively efficient disks and strong relativistic jets can coexist.
         """)
         
         # Links to the codes
-        st.subheader("Related Tools")
+        st.subheader("Accretion disk spectrum")
         col1, col2 = st.columns(2)
         with col1:
             st.link_button("🔗 ACCLUM (v1)", "https://accretion-disk-spectrum.streamlit.app")
         with col2:
             st.link_button("🔗 ACCLUM 2 (in development)", "https://acclum2.streamlit.app")
         
-        # Publication info
-        st.subheader("Publication")
-        st.write("""
-        This work will appear in the forthcoming volume:  
-        **“Recent Advances in Astrophysics and Cosmology towards the Mega Telescope Era”**,  
-        to be published in the **Astrophysics and Space Science Proceedings** series 
-        (Springer Nature).  
-        
-        This book series is indexed in **Scopus**.  
-        """)
-        st.link_button("View Series on Springer", "https://link.springer.com/series/7395")
 
 else:
     page_path = PAGES[st.session_state.page]["path"]
