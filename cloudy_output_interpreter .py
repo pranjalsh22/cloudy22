@@ -162,3 +162,20 @@ else:
         runpy.run_path(page_path, run_name="__main__")
     else:
         st.error(f"Page not found: {page_path}")
+st.markdown("---")
+st.subheader("My Scientific Tools:")
+
+apps = [
+    {"name": "Cloudy Online", "url": "https://cloudyonline.streamlit.app/", "desc": "Online interface for Cloudy spectral synthesis."},
+    {"name": "Cloudy Interpreter", "url": "https://cloudy-output-interpreter.streamlit.app/", "desc": "Analyze and visualize Cloudy output files."},
+    {"name": "Accretion Disk Sim", "url": "https://accretion-disk-spectrum.streamlit.app/", "desc": "Standard accretion disk spectrum simulator."},
+    {"name": "Dark Matter Estimator", "url": "https://darkmatter.streamlit.app/", "desc": "Rotation curves and dark matter halo estimation."},
+    {"name": "GraphAway", "url": "https://graphaway.streamlit.app/", "desc": "Advanced plotting and graphing tool for researchers."}
+]
+
+cols = st.columns(3)
+for i, app in enumerate(apps):
+    with cols[i % 3]:
+        st.markdown(f"#### [{app['name']}]({app['url']})")
+        st.caption(app['desc'])
+        st.markdown("---")
