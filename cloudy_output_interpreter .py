@@ -13,21 +13,21 @@ st.sidebar.markdown("""
 **Pranjal Sharma**  
 Amity Institute of Applied Sciences,  
 Amity University Uttar Pradesh, Noida, India  
-[Email](mailto:pranjalsh22@gmail.com)
-
----
-
-**Dr. Chiranjib Konar**  
-Amity Institute of Applied Sciences,  
-Amity University Uttar Pradesh, Noida, India  
-[Email](mailto:chiranjib.konar@gmail.com)  
-
----
-
-**Dr. Shubhrangshu Ghosh**  
-Centre for Astrophysics, Gravitation and Cosmology,  
-Department of Physics, SRM University, Sikkim, India  
+[Email](mailto:ps.sharmapranjal@gmail.com)
 """)
+---
+
+#**Dr. Chiranjib Konar**  
+#Amity Institute of Applied Sciences,  
+#Amity University Uttar Pradesh, Noida, India  
+#[Email](mailto:chiranjib.konar@gmail.com)  
+
+#---
+
+#**Dr. Shubhrangshu Ghosh**  
+#Centre for Astrophysics, Gravitation and Cosmology,  
+#Department of Physics, SRM University, Sikkim, India  
+
 
 #-----------
 import base64
@@ -77,6 +77,26 @@ if st.session_state.page == "Home":
     and spectral synthesis code. By integrating parsing tools and visualization 
     routines, the app allows users to interpret complex simulation outputs with ease.
     """)
+    st.markdown("### Official Recognition")
+    
+    cloudy_wiki_url = "https://gitlab.nublado.org/cloudy/cloudy/-/wikis/ContributedMaterial"
+    
+    st.markdown(
+        f"""
+        This application is now listed as a contributed resource
+        on the official Cloudy project site, maintained by Dr. Gary J. Ferland.
+        See the Cloudy Contributed Materials page for reference:
+        [View official listing]({cloudy_wiki_url})
+        """
+    )
+    
+    try:
+        st.badge("Listed on Cloudy Wiki", color="blue")
+    except Exception:
+        st.markdown(
+            f"<span style='padding:4px 8px; background:#007bff; color:white; font-weight:bold;'>Listed on Cloudy Wiki</span>",
+            unsafe_allow_html=True
+        )
     
     st.header("Analysis of the `.out` File")
     st.write("""
