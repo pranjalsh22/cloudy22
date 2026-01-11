@@ -136,7 +136,7 @@ if st.session_state.page == "Home":
         column1, column2 = st.columns(2)
         with column1:
             st.link_button("🔗 ACCLUM", "https://accretion-disk-spectrum.streamlit.app")
-        with column2:
+        #with column2:
             #st.link_button("🔗 ACCLUM 2 (in development)", "https://acclum2.streamlit.app")
         
     with col1:
