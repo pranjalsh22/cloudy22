@@ -7,13 +7,16 @@ import os
 
 #------------SIDEBAR---------
 
-st.sidebar.title("Authors")
+st.sidebar.title("Creator")
 
 st.sidebar.markdown("""
 **Pranjal Sharma**  
 Amity Institute of Applied Sciences,  
 Amity University Uttar Pradesh, Noida, India  
+[Portfolio]("https://pranjalsh22.wixsite.com/pranjalsharma")
+Email suggestions and Questions 
 [Email](mailto:ps.sharmapranjal@gmail.com)
+
 """)
 #---
 
@@ -120,7 +123,7 @@ if st.session_state.page == "Home":
     active galactic nuclei (AGN), H II regions, and other astrophysical environments.
     """)
 
-    st.header(" Our work")
+    st.header("Recent work")
     st.title("An Insight into Spectral States in Radio-Loud AGNs")
     col1,col2=st.columns(2)
     with col2:
@@ -132,9 +135,9 @@ if st.session_state.page == "Home":
         st.subheader("Accretion disk spectrum")
         column1, column2 = st.columns(2)
         with column1:
-            st.link_button("🔗 ACCLUM (v1)", "https://accretion-disk-spectrum.streamlit.app")
+            st.link_button("🔗 ACCLUM", "https://accretion-disk-spectrum.streamlit.app")
         with column2:
-            st.link_button("🔗 ACCLUM 2 (in development)", "https://acclum2.streamlit.app")
+            #st.link_button("🔗 ACCLUM 2 (in development)", "https://acclum2.streamlit.app")
         
     with col1:
         st.header("Book chapter")
@@ -145,7 +148,7 @@ if st.session_state.page == "Home":
         This work will appear in the forthcoming volume:  
         **“Recent Advances in Astrophysics and Cosmology towards the Mega Telescope Era”**,  
         to be published in the **Astrophysics and Space Science Proceedings** series 
-        (Springer Nature).  
+        (Accepted by Springer Nature).  
         
         This book series is indexed in **Scopus**.  
         """)
