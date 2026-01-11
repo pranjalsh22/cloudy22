@@ -71,7 +71,7 @@ for i, (name, details) in enumerate(PAGES.items()):
 st.markdown("---")
 #-----------------MAKING HOME PAGE---------------------------
 if st.session_state.page == "Home":
-    st.title("CLOUDY output file interpretor")
+    st.title("CLOUDY output interpretor")
     st.write("### Developed by **Pranjal Sharma**")
     
     st.write("""
