@@ -12,8 +12,8 @@ st.sidebar.title("Creator")
 st.sidebar.markdown("""
 **Pranjal Sharma**  
 Amity Institute of Applied Sciences,  
-Amity University Uttar Pradesh, Noida, India  
-[Portfolio]("https://pranjalsh22.wixsite.com/pranjalsharma")
+Amity University Uttar Pradesh, Noida, India  \n
+[Portfolio]("https://pranjalsh22.wixsite.com/pranjalsharma") \n
 Email suggestions and Questions 
 [Email](mailto:ps.sharmapranjal@gmail.com)
 
