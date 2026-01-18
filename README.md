@@ -13,3 +13,10 @@ The application:
 - Produces physically annotated spectral energy distribution (SED) plots  
 
 This tool is officially listed in the CLOUDY Contributed Materials repository maintained by Dr. Gary Ferland.
+
+## Support and Feedback
+
+Suggestions and questions are welcome.  
+Please open a GitHub Issue or contact:
+
+Email: ps.sharmapranjal [at] gmail.com
