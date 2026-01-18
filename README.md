@@ -14,9 +14,33 @@ The application:
 
 This tool is officially listed in the CLOUDY Contributed Materials repository maintained by Dr. Gary Ferland.
 
+## Live Application
+
+The web application is publicly available at:
+
+https://cloudy-output-interpreter.streamlit.app
+
 ## Support and Feedback
 
 Suggestions and questions are welcome.  
 Please open a GitHub Issue or contact:
 
 Email: ps.sharmapranjal [at] gmail.com
+
+## How to Cite
+
+If you use Cloudy Output Interpreter in your research, please cite:
+
+Sharma, P. (2025). *Cloudy Output Interpreter: A web application for automated analysis of CLOUDY simulation outputs.*
+
+Once the DOI is generated, please use:
+
+@software{sharma2025cloudy,
+  author  = {Sharma, Pranjal},
+  title   = {Cloudy Output Interpreter},
+  year    = {2025},
+  doi     = {DOI_PENDING},
+  url     = {https://cloudy-output-interpreter.streamlit.app}
+}
+
+This tool is officially listed in the CLOUDY Contributed Materials repository maintained by Dr. Gary Ferland.
