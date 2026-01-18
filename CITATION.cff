@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software in your research, please cite it as below."
+title: "Cloudy Output Interpreter"
+version: "0.1.0"
+doi: "DOI_PENDING"
+authors:
+  - family-names: "Sharma"
+    given-names: "Pranjal"
+    orcid: "https://orcid.org/0009-0005-2633-0088"
+date-released: 2025-01-01
+url: "https://cloudy-output-interpreter.streamlit.app"
+abstract: |
+  Cloudy Output Interpreter is an open-source web application for automated analysis of CLOUDY simulation outputs. 
+  The tool extracts final converged emergent emission-line spectra, including [O III] diagnostics, performs wavelength 
+  standardization, and reports convergence warnings. It generates interactive emission-line catalogues with customizable 
+  filtering and plotting. The integrated spectral diagnostics module converts CLOUDY continua into luminosity density, 
+  computes bolometric and band-limited luminosities (IR, optical, UV, X-ray), and produces physically annotated SED plots. 
+  The tool is officially listed in the CLOUDY Contributed Materials repository maintained by G. Ferland.
+keywords:
+  - CLOUDY
+  - photoionization
+  - spectroscopy
+  - emission lines
+  - astrophysics
+  - AGN
+  - spectral energy distribution
+license: MIT
