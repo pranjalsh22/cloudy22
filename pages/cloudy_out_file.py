@@ -30,19 +30,19 @@ def extract_cloudy_data(file_content):
 
             wavelength = float(value)
             luminosity = float(lum1)
-            rel_luminosity = float(lum2)
+            #rel_luminosity = float(lum2)
             if unit == "m":
                 wavelength *= 1e4  # convert microns to angstroms
 
             labels.append(label.strip())
             wavelengths.append(wavelength)
             luminosities.append(luminosity)
-            rel_luminosities.append(rel_luminosity)
+            #rel_luminosities.append(rel_luminosity)
 
         except ValueError:
             continue
 
-    return wavelengths, luminosities, labels, rel_luminosities
+    return wavelengths, luminosities, labels #, rel_luminosities
 
 def find_warnings(file_content):
     warnings=[]
@@ -104,7 +104,7 @@ if uploaded_file:
         "Label": labels,
         "Wavelength(Å)": wavelengths,
         "luminosity(erg/s)": luminosities,
-        "Relative luminosity": rel_luminosities
+        #"Relative luminosity": rel_luminosities
     })
     # Display Input Parameters at the Start
     st.subheader("Input Parameters")
