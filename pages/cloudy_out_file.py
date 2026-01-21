@@ -11,6 +11,7 @@ def extract_cloudy_data(file_content):
     wavelengths = []
     luminosities = []
     labels = []
+    rel_luminosities = []
 
     cleaned = re.sub(r'\b\w+\.\.+\s*', ' ', file_content)
     normalized = re.sub(r'\s+', ' ', cleaned)
@@ -29,18 +30,19 @@ def extract_cloudy_data(file_content):
 
             wavelength = float(value)
             luminosity = float(lum1)
-
+            rel_luminosity = float(lum2)
             if unit == "m":
                 wavelength *= 1e4  # convert microns to angstroms
 
             labels.append(label.strip())
             wavelengths.append(wavelength)
             luminosities.append(luminosity)
+            rel_luminosities.append(rel_luminosity)
 
         except ValueError:
             continue
 
-    return wavelengths, luminosities, labels
+    return wavelengths, luminosities, labels, rel_luminosities
 
 def find_warnings(file_content):
     warnings=[]
@@ -96,12 +98,13 @@ if uploaded_file:
     warnings=find_warnings(file_content)
     content1=final_iteration_content(file_content)
     content=extract_emergent_lines(content1)
-    wavelengths, luminosities, labels= extract_cloudy_data(content)
+    wavelengths, luminosities, labels, rel_luminosity = extract_cloudy_data(content)
     # Create a DataFrame for the line data
     line_data = pd.DataFrame({
         "Label": labels,
         "Wavelength(Å)": wavelengths,
-        "luminosity(erg/s)": luminosities
+        "luminosity(erg/s)": luminosities,
+        "Relative luminosity": rel_luminosities
     })
     # Display Input Parameters at the Start
     st.subheader("Input Parameters")
