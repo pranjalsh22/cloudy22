@@ -98,7 +98,7 @@ if uploaded_file:
     warnings=find_warnings(file_content)
     content1=final_iteration_content(file_content)
     content=extract_emergent_lines(content1)
-    wavelengths, luminosities, labels, rel_luminosities = extract_cloudy_data(content)
+    wavelengths, luminosities, labels= extract_cloudy_data(content)
     # Create a DataFrame for the line data
     line_data = pd.DataFrame({
         "Label": labels,
