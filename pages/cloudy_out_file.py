@@ -4,7 +4,7 @@ import re
 import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit as st
-from io import StringIO
+#from io import StringIO
 
 #-------------------- USER DEFINED FUNCTIONS---------------------------------------------
 
@@ -164,7 +164,27 @@ if uploaded_files:
                 "luminosity(erg/s)": luminosities,
             })
 
-            file_content = StringIO(uploaded_file.getvalue().decode("utf-8")).read()
+            #-----
+            file_content = uploaded_file.getvalue().decode(
+                "utf-8",
+                errors="replace"
+            )
+            
+            warnings = find_warnings(file_content)
+            
+            content1 = final_iteration_content(file_content)
+            
+            content = extract_emergent_lines(content1)
+            
+            wavelengths, luminosities, labels = extract_cloudy_data(content)
+            
+            line_data = pd.DataFrame({
+                "Label": labels,
+                "Wavelength(Å)": wavelengths,
+                "luminosity(erg/s)": luminosities,
+            })
+            #------
+
         
             # Display Input Parameters at the Start
             st.subheader("Input Parameters")
