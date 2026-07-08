@@ -2,3 +2,6 @@
 backgroundColor="#00001a"
 secondaryBackgroundColor="#110337"
 textColor="#ffffff"
+
+[server]
+maxUploadSize = 2048
