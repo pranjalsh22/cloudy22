@@ -153,20 +153,20 @@ if uploaded_files:
                 "utf-8",
                 errors="replace"
             )
-        
-        warnings = find_warnings(file_content)
-        
-        content1 = final_iteration_content(file_content)
-        
-        content = extract_emergent_lines(content1)
-        
-        wavelengths, luminosities, labels = extract_cloudy_data(content)
-        
-        line_data = pd.DataFrame({
-            "Label": labels,
-            "Wavelength(Å)": wavelengths,
-            "luminosity(erg/s)": luminosities,
-        })
+            
+            warnings = find_warnings(file_content)
+            
+            content1 = final_iteration_content(file_content)
+            
+            content = extract_emergent_lines(content1)
+            
+            wavelengths, luminosities, labels = extract_cloudy_data(content)
+            
+            line_data = pd.DataFrame({
+                "Label": labels,
+                "Wavelength(Å)": wavelengths,
+                "luminosity(erg/s)": luminosities,
+            })
             #------
 
         
