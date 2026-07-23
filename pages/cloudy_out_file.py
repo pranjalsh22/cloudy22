@@ -149,37 +149,24 @@ if uploaded_files:
 
         with st.expander(f"📄 {uploaded_file.name}", expanded=False):
 
-            warnings = find_warnings(file_content)
-            content1 = final_iteration_content(file_content)
-            content = extract_emergent_lines(content1)
-            wavelengths, luminosities, labels = extract_cloudy_data(content)
-
-            line_data = pd.DataFrame({
-                "Label": labels,
-                "Wavelength(Å)": wavelengths,
-                "luminosity(erg/s)": luminosities,
-            })
-
-            #-----
-            file_content = uploaded_file.getvalue().decode(
-                "utf-8",
-                errors="replace"
-            )
-            
-            
-            warnings = find_warnings(file_content)
-            
-            content1 = final_iteration_content(file_content)
-            
-            content = extract_emergent_lines(content1)
-            
-            wavelengths, luminosities, labels = extract_cloudy_data(content)
-            
-            line_data = pd.DataFrame({
-                "Label": labels,
-                "Wavelength(Å)": wavelengths,
-                "luminosity(erg/s)": luminosities,
-            })
+        file_content = uploaded_file.getvalue().decode(
+            "utf-8",
+            errors="replace"
+        )
+        
+        warnings = find_warnings(file_content)
+        
+        content1 = final_iteration_content(file_content)
+        
+        content = extract_emergent_lines(content1)
+        
+        wavelengths, luminosities, labels = extract_cloudy_data(content)
+        
+        line_data = pd.DataFrame({
+            "Label": labels,
+            "Wavelength(Å)": wavelengths,
+            "luminosity(erg/s)": luminosities,
+        })
             #------
 
         
