@@ -149,10 +149,10 @@ if uploaded_files:
 
         with st.expander(f"📄 {uploaded_file.name}", expanded=False):
 
-        file_content = uploaded_file.getvalue().decode(
-            "utf-8",
-            errors="replace"
-        )
+            file_content = uploaded_file.getvalue().decode(
+                "utf-8",
+                errors="replace"
+            )
         
         warnings = find_warnings(file_content)
         
