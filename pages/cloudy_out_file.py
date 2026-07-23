@@ -149,10 +149,6 @@ if uploaded_files:
 
         with st.expander(f"📄 {uploaded_file.name}", expanded=False):
 
-            file_content = StringIO(
-                uploaded_file.getvalue().decode("utf-8")
-            ).read()
-
             warnings = find_warnings(file_content)
             content1 = final_iteration_content(file_content)
             content = extract_emergent_lines(content1)
@@ -169,6 +165,7 @@ if uploaded_files:
                 "utf-8",
                 errors="replace"
             )
+            
             
             warnings = find_warnings(file_content)
             
